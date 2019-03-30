@@ -20,6 +20,6 @@
     </environments>
     <mappers>
         <mapper resource="mapper/good.mapper.xml"/>
-        <mapper resource="goodsku.mapper.xml"/>
+       <!-- <mapper resource="goodsku.mapper.xml"/>-->
     </mappers>
 </configuration>

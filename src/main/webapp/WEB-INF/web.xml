@@ -4,4 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>goodsServlet</servlet-name>
+    <servlet-class>com.xiongchenming.goods.controller.GoodsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>goodsServlet</servlet-name>
+    <url-pattern>/goods.do</url-pattern>
+  </servlet-mapping>
 </web-app>
