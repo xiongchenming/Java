@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IGoodsDAO {
     List<WxbGood> selectGoodsByPage(Integer page)throws Exception;
+    void insertGood(WxbGood good)throws Exception;
 }

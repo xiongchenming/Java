@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface GoodsMapper {
     List<WxbGood> selectGoodsByPage(@Param("index") Integer index,@Param("size") Integer size);
+    void insertGood(WxbGood wxbGood);
 }

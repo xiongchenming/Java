@@ -41,9 +41,19 @@
      sku_price,sku_pmoney,copy_ids,copy_desc,forward_link,order_no,type_id,tags,state,create_time,
      toped,recomed,toped_time,recomed_time,spc_id,zon_id,sell_num,website,iswxpay,isfdfk,leixing_id,kfqq
     </sql>
+    <sql id="param">
+         #{goodId},#{goodName},#{customerId},#{goodPic},#{goodPic1}, #{goodPic2},#{promoteDesc},#{skuTitle},
+         #{skuCost},#{skuPrice}, #{skuPmoney},#{copyIds},#{copyDesc},#{forwardLink},#{orderNo},#{typeId},#{tags},
+         #{state}, #{createTime}, #{toped}, #{recomed},#{topedTime},#{recomedTime},#{spcId},#{zonId},
+         #{sellNum},#{website},#{iswxpay},#{isfdfk},#{leixingId},#{kfqq}
+    </sql>
     <update id="saveAndReturnId" useGeneratedKeys="true" keyProperty="goodId" keyColumn="good_id">
         insert into wxb_good(good_name,customer_id,good_pic,good_pic1,good_pic2,promote_desc,sku_title,sku_cost,sku_price,sku_pmoney,copy_ids,copy_desc,forward_link,order_no,type_id,tags,state,create_time,toped,recomed,toped_time,recomed_time,spc_id,zon_id,sell_num,website,iswxpay,isfdfk,leixing_id,kfqq) values (#{goodName},#{customerId},#{goodPic},#{goodPic1},#{goodPic2},#{promoteDesc},#{skuTitle},#{skuCost},#{skuPrice},#{skuPmoney},#{copyIds},#{copyDesc},#{forwardLink},#{orderNo},#{typeId},#{tags},#{state},#{createTime},#{toped},#{recomed},#{topedTime},#{recomedTime},#{spcId},#{zonId},#{sellNum},#{website},#{iswxpay},#{isfdfk},#{leixingId},#{kfqq})
     </update>
+    <insert id="insertGood" parameterType="com.xiongchenming.goods.bean.WxbGood">
+        insert into wxb_good (<include refid="params"/>) values (<include refid="param"/>)
+    </insert>
+
     <select id="selectGoodsByPage" resultMap="connResultMap">
         select <include refid="params"/> from wxb_good limit #{index},#{size}
     </select>
